@@ -50,7 +50,7 @@ public class GeneralCounter extends View implements CounterInterface{
         mNumberPaint.setColor(ContextCompat.getColor(context, android.R.color.white));
         // Set the number text size to be 64sp.
         // Translate 64sp
-        mNumberPaint.setTextSize(Math.round(64f * getResources().getDisplayMetrics().scaledDensity));
+        mNumberPaint.setTextSize(Math.round(54f * getResources().getDisplayMetrics().scaledDensity));
 
         // Allocate objects needed for canvas drawing here.
         mBackgroundRect = new RectF();
@@ -112,7 +112,7 @@ public class GeneralCounter extends View implements CounterInterface{
         canvas.drawRoundRect(mBackgroundRect, mCornerRadius, mCornerRadius, mBackgroundPaint);
 
         //DRAW THE BASELINE
-        final float baselineY = canvasHeight * 0.7f;
+        final float baselineY = canvasHeight * 0.65f;
         final Paint.FontMetrics fontMetrics = mNumberPaint.getFontMetrics();
         final int topY = Math.round(baselineY + fontMetrics.top);
         final int bottomY = Math.round(baselineY + fontMetrics.bottom);
