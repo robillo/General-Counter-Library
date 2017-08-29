@@ -29,22 +29,29 @@
         android:gravity="center"
         android:textColor="#000"
         android:textStyle="bold"
-        android:layout_margin="5sp"/>
+        android:layout_margin="5sp"
+        android:id="@+id/edit_text"/>
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4sp"
+        android:elevation="1sp">
 
-        <android.support.v7.widget.CardView
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4sp"
-            android:elevation="1sp">
+            android:text="start countdown"
+            android:background="?selectableItemBackground"
+            android:id="@+id/countdown"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="start countdown"
-                android:background="?selectableItemBackground"
-                android:id="@+id/countdown"/>
+    </android.support.v7.widget.CardView>
 
-        </android.support.v7.widget.CardView>
+    <com.robillo.generalcounterlibrary.GeneralCounter
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/general_counter"
+        android:layout_marginTop="5sp"
+        android:layout_marginBottom="5sp"/>
 
 </LinearLayout>
