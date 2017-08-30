@@ -184,4 +184,12 @@ public class GeneralCounter extends View implements CounterInterface{
     public void decrement() {
         setCount(count-1);
     }
+
+    public void setMaxCount(int count){
+        count = Math.min(count, MAX_COUNT);
+        this.count = count;
+        //The string to be displayed is formatted here
+        this.displayedCount = String.format(Locale.getDefault(), "%04d", count);
+        postInvalidate();
+    }
 }

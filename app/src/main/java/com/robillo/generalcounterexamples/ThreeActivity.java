@@ -28,27 +28,14 @@ public class ThreeActivity extends FragmentActivity {
         (findViewById(R.id.countdown)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                max = Integer.valueOf(((EditText) findViewById(R.id.edit_text)).getText().toString());
-                if(max<=0){
-                    Toast.makeText(ThreeActivity.this, "NOT VALID VALUE; ENTER POSITIVE VALUES ONLY", Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    while (max>0){
-                        Timer timer = new Timer();
-                        timer.scheduleAtFixedRate(new TimerTask() {
-                            @Override
-                            public void run() {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        ((GeneralCounter) findViewById(R.id.general_counter)).decrement();
-                                        max--;
-                                    }
-                                });
-                            }
-                        }, 1000, 1000);
+                ((GeneralCounter) findViewById(R.id.general_counter)).setMaxCount(Integer.valueOf(((EditText) findViewById(R.id.edit_text)).getText().toString()));
+                Timer timer = new Timer();
+                timer.scheduleAtFixedRate(new TimerTask() {
+                    @Override
+                    public void run() {
+                        ((GeneralCounter) findViewById(R.id.general_counter)).decrement();
                     }
-                }
+                }, 1000, 1000);
             }
         });
     }
