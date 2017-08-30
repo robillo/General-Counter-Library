@@ -42,11 +42,11 @@ public class GeneralCounter extends View implements CounterInterface{
 
         // Set up paints for canvas drawing.
         mBackgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        mBackgroundPaint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        mNumberPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
+        mBackgroundPaint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         mLinePaint.setColor(ContextCompat.getColor(context, R.color.colorAccent));
         mLinePaint.setStrokeWidth(5f);
-        mNumberPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         mNumberPaint.setColor(ContextCompat.getColor(context, android.R.color.white));
         // Set the number text size to be 64sp.
         // Translate 64sp
