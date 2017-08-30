@@ -1,6 +1,7 @@
 package com.robillo.generalcounterlibrary;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -44,10 +45,19 @@ public class GeneralCounter extends View implements CounterInterface{
         mBackgroundPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mLinePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mNumberPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
-        mBackgroundPaint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
-        mLinePaint.setColor(ContextCompat.getColor(context, R.color.colorAccent));
+        if(attrs == null){
+            mBackgroundPaint.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
+            mLinePaint.setColor(ContextCompat.getColor(context, R.color.colorAccent));
+            mNumberPaint.setColor(ContextCompat.getColor(context, android.R.color.white));
+        }
+        else {
+            TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.GeneralCounter);
+            mBackgroundPaint.setColor(array.getColor(R.styleable.GeneralCounter_background_color, ContextCompat.getColor(context, R.color.colorPrimary)));
+            mLinePaint.setColor(array.getColor(R.styleable.GeneralCounter_highlight_color, ContextCompat.getColor(context, R.color.colorAccent)));
+            mNumberPaint.setColor(array.getColor(R.styleable.GeneralCounter_text_color, ContextCompat.getColor(context, android.R.color.white)));
+            array.recycle();
+        }
         mLinePaint.setStrokeWidth(5f);
-        mNumberPaint.setColor(ContextCompat.getColor(context, android.R.color.white));
         // Set the number text size to be 64sp.
         // Translate 64sp
         mNumberPaint.setTextSize(Math.round(54f * getResources().getDisplayMetrics().scaledDensity));
