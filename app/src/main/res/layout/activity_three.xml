@@ -52,6 +52,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/general_counter"
         android:layout_marginTop="5sp"
-        android:layout_marginBottom="5sp"/>
+        android:layout_marginBottom="5sp"
+        app:background_color="#000000"
+        app:highlight_color="#FFFFFF"
+        app:text_color="#FF0000"/>
 
 </LinearLayout>
