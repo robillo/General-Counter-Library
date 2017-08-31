@@ -4,5 +4,6 @@
         <attr name="background_color" format="color"/>
         <attr name="highlight_color" format="color"/>
         <attr name="text_color" format="color"/>
+        <attr name="text_size" format="float"/>
     </declare-styleable>
 </resources>

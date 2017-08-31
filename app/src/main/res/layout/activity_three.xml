@@ -48,13 +48,17 @@
     </android.support.v7.widget.CardView>
 
     <com.robillo.generalcounterlibrary.GeneralCounter
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/general_counter"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="5sp"
         android:layout_marginBottom="5sp"
-        app:background_color="#000000"
-        app:highlight_color="#FFFFFF"
-        app:text_color="#FF0000"/>
+        android:paddingStart="40sp"
+        android:paddingEnd="40sp"
+        app:background_color="#880E4F"
+        app:highlight_color="#FF8A80"
+        app:text_color="#F0F4C3"
+        app:text_size="35"/>
 
 </LinearLayout>
