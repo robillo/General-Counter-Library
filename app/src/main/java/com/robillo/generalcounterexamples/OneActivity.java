@@ -8,6 +8,8 @@ import com.robillo.generalcounterlibrary.GeneralCounter;
 
 public class OneActivity extends FragmentActivity {
 
+    //OneActivity onCreate
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

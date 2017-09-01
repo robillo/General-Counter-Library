@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4sp"
-        android:elevation="1sp">
+        android:elevation="1sp"
+        tools:targetApi="lollipop">
 
         <Button
             android:layout_width="match_parent"
